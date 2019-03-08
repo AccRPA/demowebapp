@@ -90,19 +90,11 @@ namespace Demo.Controllers
                 Company company = GetCompanyById(id, ctx);
                 if (null != company)
                 {
-                    if (null == Get(data.Name))
-                    {
-                        company.Name = data.Name;
-                        company.Address.Country = data.Address.Country;
-                        company.Address.City = data.Address.City;
-                        company.Address.ZipCode = data.Address.ZipCode;
-                        ctx.SaveChanges();
-                        return Ok();
-                    }
-                    else
-                    {
-                        return BadRequest(Constants.MESSAGE_COMPANY_ALREADY_EXISTS);
-                    }
+                    company.Address.Country = data.Address.Country;
+                    company.Address.City = data.Address.City;
+                    company.Address.ZipCode = data.Address.ZipCode;
+                    ctx.SaveChanges();
+                    return Ok();                    
                 }
                 else
                 {
