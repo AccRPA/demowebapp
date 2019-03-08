@@ -1,0 +1,15 @@
+﻿@model System.Exception
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <hgroup>
+        <h3>Oops! An error occurred while processing your request. @Model.Message</h3>
+    </hgroup>
+    @Html.ActionLink("Home", "Index")
+</body>
+</html>
